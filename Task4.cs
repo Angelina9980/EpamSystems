@@ -13,7 +13,7 @@ namespace ConsoleApp4
           Console.WriteLine("Enter a positive number");
 
             long number = long.Parse(Console.ReadLine());
-            if (number < 0)
+            while (number < 0)
             {
                 Console.WriteLine("Error. Enter a positive number");
                 number = long.Parse(Console.ReadLine());
