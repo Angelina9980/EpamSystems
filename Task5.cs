@@ -18,13 +18,13 @@ namespace ConsoleApp5
                                    
         }
 
-       public static bool Check(string sentence)
+       public static string Check(string sentence)
         {
             int[] array = new int[sentence.Length];
             int mark = 0;
 
             if (sentence[0] == ')' || sentence[0] == ']' || sentence[0] == '}')
-                return false;
+                return "No";
 
             for (int i = 0; i < sentence.Length;i++)
             {
@@ -50,27 +50,27 @@ namespace ConsoleApp5
                 if (sentence[i] == ')')
                 {
                     if (mark == 0 || array[mark - 1] == 2 || array[mark - 1] == 3)
-                        return false;
+                        return "No";
                     else mark--;
                 }
 
                 if (sentence[i] == ']')
                 {
                     if (mark == 0 || array[mark - 1] == 1 || array[mark - 1] == 3)
-                        return false;
+                        return "No";
                     else mark--;
                 }
 
                 if (sentence[i] == '}')
                 {
                     if (mark == 0 || array[mark - 1] == 1 || array[mark - 1] == 2)
-                        return false;
+                        return "No";
                     else mark--;
                 }
                 
             }
-                if (mark != 0) return false;
-                else return true;
+                if (mark != 0) return "No";
+                else return "Yes";
         }
     }
 }
